@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>success</title>
+        <style>
+            .spinner.loading {
+                padding: 50px;
+                position: relative;
+                text-align: center;
+            }
+    
+            .spinner.loading:before {
+                content: "";
+                height: 30px;
+                width: 30px;
+                margin: -15px auto auto -15px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                border-width: 8px;
+                border-style: solid;
+                border-color: #2180c0 #ccc #ccc;
+                border-radius: 100%;
+                animation: rotation .7s infinite linear;
+            }
+    
+            @keyframes rotation {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(359deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="spinner loading"></div>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+{
+  "name": "ecommero-api",
+  "version": "5.0.0",
+  "description": "ecommero api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "format": "prettier --write '**/*.js'",
+    "lint:fix": "eslint . --ext .js --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run format",
+      "npm run lint:fix"
+    ]
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.12.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "consolidate": "^0.15.1",
+    "dataloader": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.6.1",
+    "expo-server-sdk": "^3.2.0",
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "firebase-admin": "^7.3.0",
+    "graphql": "^14.0.2",
+    "graphql-upload": "^8.0.4",
+    "http": "0.0.1-security",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.9.10",
+    "nodemailer": "^6.1.1",
+    "paypal-rest-sdk": "^1.8.1",
+    "stripe": "^7.0.1",
+    "tinify": "^1.6.0-beta.2",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.7",
+    "metro-react-native-babel-preset": "^0.54.1",
+    "nodemon": "^1.19.4",
+    "prettier": "2.0.5",
+    "prettier-config-standard": "^1.0.1"
+  }
+}

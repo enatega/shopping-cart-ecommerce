@@ -1,0 +1,7 @@
+{
+    "env": {
+        "MONGO_USER": "db-user",
+        "MONGO_PASSWORD": "mlab55",
+        "MONGO_DB": "foodappdb"
+    }
+}
