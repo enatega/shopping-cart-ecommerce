@@ -39,7 +39,7 @@
       "package": "com.ecommero.app",
       "permissions": [],
       "googleServicesFile": "./google-services.json",
-      "useNextNotificationsApi": true
+  
     }
   }
 }
