@@ -8,16 +8,17 @@ import {
   Platform
 } from 'react-native'
 import styles from './styles'
+import * as Google from 'expo-auth-session/providers/google'
 import { login } from '../../apollo/server'
 import * as Notifications from 'expo-notifications'
 import { colors, scale } from '../../utils'
+import * as AuthSession from 'expo-auth-session'
 import { TextDefault, Spinner } from '../../components'
 import TextField from '../../ui/Textfield/Textfield'
 import ForgotPassword from './ForgotPassword/ForgotPassword'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { EvilIcons, SimpleLineIcons } from '@expo/vector-icons'
-import * as AppAuth from 'expo-app-auth'
-import * as Google from 'expo-google-app-auth'
+
 import getEnvVars from '../../../environment'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import * as AppleAuthentication from 'expo-apple-authentication'
@@ -27,7 +28,11 @@ import { FlashMessage } from '../../components/FlashMessage/FlashMessage'
 import MainBtn from '../../ui/Buttons/MainBtn'
 import AlternateBtn from '../../ui/Buttons/AlternateBtn'
 
-const { IOS_CLIENT_ID_GOOGLE, ANDROID_CLIENT_ID_GOOGLE } = getEnvVars()
+const {
+  IOS_CLIENT_ID_GOOGLE,
+  ANDROID_CLIENT_ID_GOOGLE,
+  Expo_CLIENT_ID_GOOGLE
+} = getEnvVars()
 
 const LOGIN = gql`
   ${login}
@@ -117,32 +122,63 @@ function SignIn(props) {
     }
   }
 
-  async function _GoogleSignUp() {
-    try {
-      const { type, user } = await Google.logInAsync({
-        iosClientId: IOS_CLIENT_ID_GOOGLE,
-        androidClientId: ANDROID_CLIENT_ID_GOOGLE,
-        iosStandaloneAppClientId: IOS_CLIENT_ID_GOOGLE,
-        androidStandaloneAppClientId: ANDROID_CLIENT_ID_GOOGLE,
-        redirectUrl: `${AppAuth.OAuthRedirect}:/oauth2redirect/google`,
-        scopes: ['profile', 'email']
-      })
-      if (type === 'success') { return user }
-    } catch (e) {
-      if (e.code !== -3) {
-        FlashMessage({ message: e.message, type: 'warning', position: 'top' })
-      }
+  const [
+    googleRequest,
+    googleResponse,
+    googlePromptAsync
+  ] = Google.useAuthRequest({
+    expoClientId: Expo_CLIENT_ID_GOOGLE,
+    iosClientId: IOS_CLIENT_ID_GOOGLE,
+    iosStandaloneAppClientId: IOS_CLIENT_ID_GOOGLE,
+    androidClientId: ANDROID_CLIENT_ID_GOOGLE,
+    androidStandaloneAppClientId: ANDROID_CLIENT_ID_GOOGLE,
+    redirectUrl: `${AuthSession.OAuthRedirect}:/oauth2redirect/google`,
+    scopes: ['profile', 'email'],
+    ...{ useProxy: true }
+  })
+
+  const googleSignUp = () => {
+    if (googleResponse?.type === 'success') {
+      const { authentication } = googleResponse
+      console.log(authentication.accessToken)
+      ;(async () => {
+        const userInfoResponse = await fetch(
+          'https://www.googleapis.com/oauth2/v1/userinfo?alt=json',
+          {
+            headers: { Authorization: `Bearer ${authentication.accessToken}` }
+          }
+        )
+        const googleUser = await userInfoResponse.json()
+        const user = {
+          phone: '',
+          email: googleUser.email,
+          password: '',
+          name: googleUser.name,
+          picture: googleUser.picture,
+          type: 'google'
+        }
+        mutateLogin(user)
+      })()
     }
   }
+
+  useEffect(() => {
+    googleSignUp()
+  }, [googleResponse])
+
   async function mutateLogin(user) {
     try {
       setLoading(true)
       let notificationToken = null
-      const { status: existingStatus } = await Notifications.getPermissionsAsync()
+      const {
+        status: existingStatus
+      } = await Notifications.getPermissionsAsync()
       if (existingStatus === 'granted') {
         notificationToken = await Notifications.getExpoPushTokenAsync()
       }
-      mutate({ variables: { ...user, notificationToken: notificationToken.data } })
+      mutate({
+        variables: { ...user, notificationToken: notificationToken.data }
+      })
     } catch (e) {
       console.log(e)
     } finally {
@@ -160,20 +196,8 @@ function SignIn(props) {
             onPressIn={() => {
               loginButtonSetter('Google')
             }}
-            onPress={async() => {
-              const googleUser = await _GoogleSignUp()
-              if (googleUser) {
-                const user = {
-                  phone: '',
-                  email: googleUser.email,
-                  password: '',
-                  name: googleUser.name,
-                  picture: googleUser.photoUrl,
-                  type: 'google'
-                }
-                mutateLogin(user)
-              }
-            }}
+            disabled={!googleRequest}
+            onPress={() => googlePromptAsync()}
             style={styles.socialBtn}>
             <View style={styles.bgCircle}>
               <EvilIcons
@@ -205,7 +229,7 @@ function SignIn(props) {
         buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.BLACK}
         cornerRadius={3}
         style={styles.appleBtn}
-        onPress={async() => {
+        onPress={async () => {
           loginButtonSetter('Apple')
           try {
             const credential = await AppleAuthentication.signInAsync({
@@ -247,7 +271,7 @@ function SignIn(props) {
     return (
       <MainBtn
         loading={loading && loginButton === 'Login'}
-        onPress={async() => {
+        onPress={async () => {
           loginButtonSetter('Login')
           const user = {
             email: email,
