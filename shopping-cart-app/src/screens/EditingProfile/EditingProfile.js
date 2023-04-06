@@ -191,12 +191,13 @@ function EditingProfile(props) {
                 <MainBtn
                   loading={loadingMutation}
                   style={{ width: '80%' }}
-                  onPress={async() => {
+                  onPress={async () => {
                     if (validate()) {
                       mutate({
                         variables: {
                           name: name,
-                          phone: phone
+                          phone: phone,
+                          is_Active: true
                         }
                       })
                     }

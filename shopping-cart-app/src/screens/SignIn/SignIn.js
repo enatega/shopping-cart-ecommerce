@@ -94,21 +94,29 @@ function SignIn(props) {
   }
   async function onCompleted(data) {
     // console.log('login: ', data)
-    try {
-      // const trackingOpts = {
-      //     id: data.login.userId,
-      //     usernameOrEmail: data.login.email
-      // }
-      // Analytics.identify(data.login.userId, trackingOpts)
-      // Analytics.track(Analytics.events.USER_LOGGED_IN, trackingOpts)
-      await setTokenAsync(data.login.token)
-      if (cartAddress === 'Cart') navigation.goBack()
-      else navigation.navigate('MainLanding')
-    } catch (e) {
-      console.log(e)
-    } finally {
+    if (data.login.is_Active == false) {
+      FlashMessage({
+        message: "Can't Login! This Account is deleted!",
+        type: 'warning',
+        position: 'top'
+      })
       setLoading(false)
-    }
+    } else
+      try {
+        // const trackingOpts = {
+        //     id: data.login.userId,
+        //     usernameOrEmail: data.login.email
+        // }
+        // Analytics.identify(data.login.userId, trackingOpts)
+        // Analytics.track(Analytics.events.USER_LOGGED_IN, trackingOpts)
+        await setTokenAsync(data.login.token)
+        if (cartAddress === 'Cart') navigation.goBack()
+        else navigation.navigate('MainLanding')
+      } catch (e) {
+        console.log(e)
+      } finally {
+        setLoading(false)
+      }
   }
   function onError(error) {
     try {

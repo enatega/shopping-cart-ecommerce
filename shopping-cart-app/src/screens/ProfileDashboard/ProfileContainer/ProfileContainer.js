@@ -10,6 +10,7 @@ import { TextDefault } from '../../../components'
 function profileContainer(props) {
   const navigation = useNavigation()
   const { logout, profile, isLoggedIn } = useContext(UserContext)
+
   return (
     <View style={styles.profileContainer}>
       <View style={styles.profileSubContainer}>
@@ -87,6 +88,20 @@ function profileContainer(props) {
                   />
                   <TextDefault textColor={colors.fontSecondColor}>
                     {'Addresses'}
+                  </TextDefault>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  activeOpacity={1}
+                  //onPress={() => modalizeRef.current.open('top')}
+                  onPress={() => navigation.navigate('DeleteButton')}
+                  style={{ alignItems: 'center' }}>
+                  <SimpleLineIcons
+                    name="trash"
+                    size={scale(20)}
+                    color={colors.fontThirdColor}
+                  />
+                  <TextDefault textColor={colors.fontSecondColor}>
+                    {'Delete'}
                   </TextDefault>
                 </TouchableOpacity>
                 <TouchableOpacity

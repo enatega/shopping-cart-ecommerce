@@ -56,7 +56,7 @@ export const UserProvider = props => {
 
   useEffect(() => {
     let isSubscribed = true
-    ;(async() => {
+    ;(async () => {
       const token = await AsyncStorage.getItem('token')
       isSubscribed && setToken(token)
     })()
@@ -68,7 +68,7 @@ export const UserProvider = props => {
   useEffect(() => {
     if (!token) return
     let isSubscribed = true
-    ;(async() => {
+    ;(async () => {
       isSubscribed && (await fetchProfile())
       isSubscribed && (await fetchOrders())
     })()
@@ -84,7 +84,7 @@ export const UserProvider = props => {
 
   useEffect(() => {
     let isSubscribed = true
-    ;(async() => {
+    ;(async () => {
       // await AsyncStorage.clear()
       const cart = await AsyncStorage.getItem('cartItems')
       isSubscribed && setCart(cart ? JSON.parse(cart) : [])
@@ -106,7 +106,7 @@ export const UserProvider = props => {
     setToken(token)
   }
 
-  const logout = async() => {
+  const logout = async () => {
     try {
       await AsyncStorage.removeItem('token')
       setToken(null)
@@ -170,12 +170,12 @@ export const UserProvider = props => {
     }
   }
 
-  const clearCart = async() => {
+  const clearCart = async () => {
     setCart([])
     await AsyncStorage.setItem('cartItems', JSON.stringify([]))
   }
 
-  const addQuantity = async(key, quantity = 1) => {
+  const addQuantity = async (key, quantity = 1) => {
     const cartIndex = cart.findIndex(c => c.key === key)
     cart[cartIndex].quantity += quantity
     setCart([...cart])
@@ -192,7 +192,7 @@ export const UserProvider = props => {
     )
   }
 
-  const addCartItem = async(
+  const addCartItem = async (
     _id,
     product,
     image,
