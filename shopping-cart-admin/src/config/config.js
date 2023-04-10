@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
-export const server_url = 'http://192.168.100.90:8002/'
-export const ws_server_url = 'ws://192.168.100.90:8002/'
+export const server_url = 'http://10.97.28.83:8002/'
+export const ws_server_url = 'ws://10.97.28.83:8002/'
 // export const server_url = 'https://ecommero.ninjascode.com/'
 // export const ws_server_url = 'wss://ecommero.ninjascode.com/'
 export const cloudinary_upload_url =
