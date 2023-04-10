@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
 import navigationService from './navigationService'
-import * as Notifications from 'expo-notifications';
+import * as Notifications from 'expo-notifications'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import * as Screen from '../screens'
 import { MainMenu } from '../components'
@@ -30,6 +30,10 @@ function noDrawer() {
       <NavigationStack.Screen
         name="AddressList"
         component={Screen.AddressList}
+      />
+      <NavigationStack.Screen
+        name="DeleteButton"
+        component={Screen.DeleteButton}
       />
       <NavigationStack.Screen name="Checkout" component={Screen.Checkout} />
       <NavigationStack.Screen name="Payment" component={Screen.Payment} />
@@ -107,7 +111,7 @@ function AppContainer() {
 
   useEffect(() => {
     Notifications.setNotificationHandler({
-      handleNotification: async() => ({
+      handleNotification: async () => ({
         shouldShowAlert: true,
         shouldPlaySound: false,
         shouldSetBadge: false

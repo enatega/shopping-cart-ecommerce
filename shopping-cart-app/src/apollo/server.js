@@ -7,6 +7,7 @@ mutation Login($facebookId:String,$email:String,$password:String,$type:String!,$
      name
      email
      phone
+     is_Active
    }
 }
 `
@@ -40,6 +41,7 @@ export const profile = `
       phone
       email
       notificationToken
+      is_Active
       addresses{
         _id
         label
@@ -84,11 +86,12 @@ export const profile = `
   }`
 
 export const updateUser = `
-    mutation UpdateUser($name:String!,$phone:String!){
-        updateUser(updateUserInput:{name:$name,phone:$phone}){
+    mutation UpdateUser($name:String!,$phone:String!,$is_Active:Boolean!){
+        updateUser(updateUserInput:{name:$name,phone:$phone,is_Active:$is_Active}){
           _id
           name
           phone
+          is_Active
         }
       }`
 

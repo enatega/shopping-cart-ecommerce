@@ -21,6 +21,7 @@ import Review from './Review/Review'
 import Category from './Category/Category'
 import SubCategory from './SubCategory/SubCategory'
 import Favourite from './Favourite/Favourite'
+import DeleteButton from './DeleteScreen/DeleteScreen'
 
 export {
   AddressList,
@@ -45,5 +46,6 @@ export {
   Review,
   Category,
   SubCategory,
-  Favourite
+  Favourite,
+  DeleteButton
 }
