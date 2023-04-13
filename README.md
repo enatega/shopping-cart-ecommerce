@@ -12,7 +12,7 @@
   <img alt="Download on App Store" src="https://user-images.githubusercontent.com/7317008/43209852-4ca39622-904b-11e8-8ce1-cdc3aee76ae9.png" height=43>
 </a>
 
-[Admin Dashboard](http://ecommero.ninjascode.com/dashboard)
+[Admin Dashboard](http://ecommero.ninjascode.com/)
 
 
 ## Reporting an issue
