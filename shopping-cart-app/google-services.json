@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "378663620953",
-    "firebase_url": "https://ecommero-1f0eb.firebaseio.com",
-    "project_id": "ecommero-1f0eb",
-    "storage_bucket": "ecommero-1f0eb.appspot.com"
+    "project_number": "1041802076420",
+    "project_id": "ecommero-app",
+    "storage_bucket": "ecommero-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:378663620953:android:bcecd589dd6edc63acfc48",
+        "mobilesdk_app_id": "1:1041802076420:android:cfdb968fd684fe3b2a7051",
         "android_client_info": {
           "package_name": "com.ecommero.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "378663620953-8tc21u8vl3vqc4pletulermdp599en3q.apps.googleusercontent.com",
+          "client_id": "1041802076420-cuv79u69tphi3dk1e93hn7380ms6k4qh.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAbcEl9_R4cPaVcqF3W0-Vy44-BQ_yOfmw"
+          "current_key": "AIzaSyB-d5SVek57MbEr0IP0e7bP5QAa4NS0DvA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "378663620953-8tc21u8vl3vqc4pletulermdp599en3q.apps.googleusercontent.com",
+              "client_id": "1041802076420-cuv79u69tphi3dk1e93hn7380ms6k4qh.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
