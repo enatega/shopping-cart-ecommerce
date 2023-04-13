@@ -140,7 +140,7 @@ function SignIn(props) {
     iosStandaloneAppClientId: IOS_CLIENT_ID_GOOGLE,
     androidClientId: ANDROID_CLIENT_ID_GOOGLE,
     androidStandaloneAppClientId: ANDROID_CLIENT_ID_GOOGLE,
-    redirectUrl: `${AuthSession.OAuthRedirect}:/oauth2redirect/google`,
+    //redirectUrl: `${AuthSession.OAuthRedirect}:/oauth2redirect/google`,
     scopes: ['profile', 'email'],
     ...{ useProxy: true }
   })

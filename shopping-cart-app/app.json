@@ -1,6 +1,6 @@
 {
   "expo": {
-    "version": "2.0.5",
+    "version": "2.0.8",
     "name": "Ecommero",
     "scheme": "ecommero-app",
     "description": " Ecommero is a starter kit ecommerce UI theme built in React Native using Expo for IOS and Android. It's made keeping good aesthetics in mind as well keeping the best coding practices in mind. Its fully customisable to easily help you in your next ecommerce project. https://market.nativebase.io/view/react-native-e-commero-ui-theme",
@@ -30,17 +30,21 @@
     },
     "notification": {
       "iosDisplayInForeground": true,
-      "color":"#D0AD8A",
+      "color": "#D0AD8A",
       "icon": "./assets/image.png",
       "androidMode": "default",
-       "androidCollapsedTitle": "Ecommero"
+      "androidCollapsedTitle": "Ecommero"
     },
     "android": {
-      "versionCode": 6,
+      "versionCode": 9,
       "package": "com.ecommero.app",
       "permissions": [],
-      "googleServicesFile": "./google-services.json",
-  
+      "googleServicesFile": "./google-services.json"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0b40e789-4966-41e5-86c4-a1d7fe586e74"
+      }
     }
   }
 }
