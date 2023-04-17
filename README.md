@@ -54,13 +54,13 @@ The version of nodejs should be between 14.0 to 16.0
 
 ## Screenshots
 
-|                    Customer Menu                     |                 Customer Categories                  |                    Customer Items                    |
+|                    Ecommero Menu                     |                 Ecommero Categories                  |                    Ecommero Items                    |
 | :--------------------------------------------------: | :--------------------------------------------------: | :--------------------------------------------------: |
 | ![](./contributingGuides/screenshots/customer11.jpeg) | ![](./contributingGuides/screenshots/customer22.jpeg) | ![](./contributingGuides/screenshots/customer33.jpeg) |
 
-|                    Rider Menu                     |                   Rider Orders                    |                Rider Items Details                |
+|                    Ecommero Items                     |                   Rider Orders                    |                Rider Items Details                |
 | :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
-| ![](./contributingGuides/screenshots/rider11.jpeg) | ![](./contributingGuides/screenshots/rider23.jpeg) | ![](./contributingGuides/screenshots/rider33.jpeg) |
+| ![](./contributingGuides/screenshots/rider11.jpeg) | ![](./contributingGuides/screenshots/rider22.jpeg) | ![](./contributingGuides/screenshots/rider33.jpeg) |
 
 |                  Stats Overview                   |                    User Table                     |                Food Items Editing                 |
 | :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
