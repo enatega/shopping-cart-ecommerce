@@ -56,11 +56,11 @@ The version of nodejs should be between 14.0 to 16.0
 
 |                    Customer Menu                     |                 Customer Categories                  |                    Customer Items                    |
 | :--------------------------------------------------: | :--------------------------------------------------: | :--------------------------------------------------: |
-| ![](./contributingGuides/screenshots/customer1.jpeg) | ![](./contributingGuides/screenshots/customer2.jpeg) | ![](./contributingGuides/screenshots/customer3.jpeg) |
+| ![](./contributingGuides/screenshots/customer11.jpeg) | ![](./contributingGuides/screenshots/customer22.jpeg) | ![](./contributingGuides/screenshots/customer33.jpeg) |
 
 |                    Rider Menu                     |                   Rider Orders                    |                Rider Items Details                |
 | :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
-| ![](./contributingGuides/screenshots/rider1.jpeg) | ![](./contributingGuides/screenshots/rider2.jpeg) | ![](./contributingGuides/screenshots/rider3.jpeg) |
+| ![](./contributingGuides/screenshots/rider11.jpeg) | ![](./contributingGuides/screenshots/rider23.jpeg) | ![](./contributingGuides/screenshots/rider33.jpeg) |
 
 |                  Stats Overview                   |                    User Table                     |                Food Items Editing                 |
 | :-----------------------------------------------: | :-----------------------------------------------: | :-----------------------------------------------: |
