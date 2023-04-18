@@ -1,6 +1,6 @@
 # Ecommero Mobile
 
-![Project thumbnail](./contributingGuides/thumbnail.png)
+![Project thumbnail](./contributingGuides/Banner.png)
 <br/><b>Introducing Ecommero</b>, the comprehensive e-commerce solution that caters to iOS, Android, and Web platforms. With a modern design and full-fledged features, Ecommero provides an easy-to-implement app solution for any e-commerce company.
 
 Built with React Native and Expo for mobile, and React for the dashboard panel, Ecommero provides seamless integration with any e-commerce platform. State management and querying endpoints are made simple with Apollo Client, while the API is built with Node and Mongodb.
@@ -47,9 +47,28 @@ As we’ve mentioned above, the solution includes three separate modules. To set
 
 To run the module, you need to have nodejs installed on your machine. Once nodejs is installed, go to the directory and enter the following commands
 
+-      cd ecommero-app
+-      npm install (or yarn install)
+-      npm start
+
 The required credentials and keys have been set already. You can setup your own keys and credentials
 
 The version of nodejs should be between 14.0 to 16.0
+
+##Run Grocery UI in your Device:
+
+#### 1. Run on iOS
+
+- Run -expo start- in your terminal
+- An expo interface will open select the option run on iOS simulator
+- To run on iOS device enter the url of expo given in opened interface in your expo app on iOS by downloading expo from AppStore
+
+#### 2. Run on Android
+
+- Run expo start in your terminal
+- Make sure you have an Android emulator installed and running
+- Click the option run on android emulator in the opened interface in your expo app
+- To run on device scan the QR code given in opened expo app web interface
 
 ## Screenshots
 
