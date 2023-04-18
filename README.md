@@ -1,6 +1,7 @@
 # Ecommero Mobile
 
 ![Project thumbnail](./contributingGuides/Banner.png)
+<br>
 <br/><b>Introducing Ecommero</b>, the comprehensive e-commerce solution that caters to iOS, Android, and Web platforms. With a modern design and full-fledged features, Ecommero provides an easy-to-implement app solution for any e-commerce company.
 
 Built with React Native and Expo for mobile, and React for the dashboard panel, Ecommero provides seamless integration with any e-commerce platform. State management and querying endpoints are made simple with Apollo Client, while the API is built with Node and Mongodb.
@@ -55,7 +56,7 @@ The required credentials and keys have been set already. You can setup your own 
 
 The version of nodejs should be between 14.0 to 16.0
 
-##Run Ecommero App in your Device:
+## Run Grocery UI in your Device:
 
 #### 1. Run on iOS
 
