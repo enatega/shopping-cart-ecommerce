@@ -55,7 +55,7 @@ The required credentials and keys have been set already. You can setup your own 
 
 The version of nodejs should be between 14.0 to 16.0
 
-##Run Grocery UI in your Device:
+##Run Ecommero App in your Device:
 
 #### 1. Run on iOS
 
