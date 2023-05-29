@@ -154,7 +154,7 @@ The version of nodejs should be between 14.0 to 16.0
   <img alt="Download on App Store" src="https://user-images.githubusercontent.com/7317008/43209852-4ca39622-904b-11e8-8ce1-cdc3aee76ae9.png" height=43>
 </a>
 
-[Admin Dashboard](http://ecommero.ninjascode.com/)
+[Admin Dashboard](https://loquacious-cocada-464023.netlify.app/)
 
 ## Documentation and Product Demo Video:
 
